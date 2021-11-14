@@ -13,12 +13,17 @@ mat-drawer {
   background-color: dodgerblue;
   color: white;
 }
-.nav-btn {
-  margin: 1em;
-}
 .nav-btn .mat-raised-button {
   width: 100%;
+  box-shadow: none;
+  border-radius: 0;
+  padding: .8em 4em;
 }
+
+.nav-btn .mat-raised-button {
+  border-bottom: 2px solid lightgray;
+}
+
 .sidenav-content {
   display: flex;
   flex-direction: column;
