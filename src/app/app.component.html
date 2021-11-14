@@ -1,1 +1,23 @@
-<router-outlet></router-outlet>
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <div class="sidenav-content">
+      <a class="nav-btn" routerLink="/" (click)="showFiller = !showFiller; drawer.toggle()">
+        <button mat-raised-button>
+          HOME
+        </button>
+      </a>
+      <a class="nav-btn" routerLink="/contact" (click)="showFiller = !showFiller; drawer.toggle()">
+        <button mat-raised-button>
+          CONTACT
+        </button>
+      </a>
+    </div>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <button type="button" class="menu-btn" mat-button (click)="drawer.toggle()">
+      <i *ngIf="!showFiller" class="material-icons" (click)="showFiller = !showFiller">menu</i>
+      <i *ngIf="showFiller" class="material-icons" (click)="showFiller = !showFiller">menu_open</i>
+    </button>
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

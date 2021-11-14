@@ -1,0 +1,25 @@
+mat-drawer {
+  position: fixed;
+}
+.menu-btn {
+  position: fixed;
+  z-index: 99;
+  padding: 0;
+  margin: 1em 1.5em;
+  min-width: auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  background-color: dodgerblue;
+  color: white;
+}
+.nav-btn {
+  margin: 1em;
+}
+.nav-btn .mat-raised-button {
+  width: 100%;
+}
+.sidenav-content {
+  display: flex;
+  flex-direction: column;
+}
