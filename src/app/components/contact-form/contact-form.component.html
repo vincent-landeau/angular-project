@@ -1,0 +1,46 @@
+<div class="contact-form-container">
+  <div>
+    <div *ngIf="!contactFormSubmitted" class="custom-form">
+      <form [formGroup]="contactForm" (ngSubmit)="submitForm()" name="myForm">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" type="text" placeholder="Your name*">
+          <mat-error *ngIf="contactForm.controls.name.invalid && contactFormShowErrors">
+            <span class="error-message">Please enter a valid name</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" placeholder="Your email*">
+          <mat-error *ngIf="contactForm.controls.email.invalid && contactFormShowErrors">
+            <span class="error-message">Please enter a valid email</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Subject</mat-label>
+          <input matInput formControlName="subject" type="text" placeholder="Your Subject.."/>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Message</mat-label>
+          <textarea matInput
+                    cdkTextareaAutosize
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="5"
+                    formControlName="comments"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Send</button>
+      </form>
+    </div>
+    <div *ngIf="contactFormSubmitted" class="custom-form">
+      <div class="">
+        <h3 class="">Message successfully sent!</h3>
+        <div class="">
+          <a class="" (click)="contactFormReset()">
+            <button mat-raised-button color="primary" type="submit">Send another message</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

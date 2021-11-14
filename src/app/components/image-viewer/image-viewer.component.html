@@ -1,0 +1,7 @@
+<mat-grid-list [cols]="breakpoint" rowHeight="462px" (window:resize)="onResize($event)">
+  <mat-grid-tile *ngFor="let item of imageList; let i = index">
+    <mat-card>
+      <image [imageAttr]="item" (addCommentEventToImageViewerComponent)="onEmitAddCommentEventToImageViewerComponent($event, i)" (addOneLike)="onEmitAddOneLike($event, i)"></image>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
