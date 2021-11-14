@@ -20,18 +20,20 @@ import {MatButtonModule} from "@angular/material/button";
     ImageViewerComponent,
     ImageComponent,
     ImageButtonsComponent,
-    ContactFormComponent
+    ContactFormComponent,
     NoSpacesPipe,
     NoQuotesPipe
   ],
-    imports: [
+  imports: [
     CommonModule,
-        ReactiveFormsModule
+    ReactiveFormsModule,
     MatIconModule,
     MatGridListModule,
     MatCardModule,
+    MatFormFieldModule,
     MatInputModule,
     MatButtonModule
+  ],
   exports: [
     ImageViewerComponent,
     ImageComponent,
