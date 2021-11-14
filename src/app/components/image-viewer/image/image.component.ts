@@ -10,12 +10,12 @@ export class ImageComponent implements OnInit {
 
   @Input() imageAttr: ImageModel;
   @Output() addCommentEventToImageViewerComponent = new EventEmitter<string>();
+  @Output() addOneLike = new EventEmitter<void>();
   addCommentEventToImageComponent: string;
 
   constructor(private readonly changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    console.log(this.imageAttr.comments)
   }
 
   onEmitAddCommentEventToImageComponent(event: string) {
@@ -26,6 +26,15 @@ export class ImageComponent implements OnInit {
 
   emitAddCommentEventToImageViewerComponent() {
     this.addCommentEventToImageViewerComponent.emit(this.addCommentEventToImageComponent);
+  }
+
+  onEmitAddOneLike(event: void) {
+    this.changeDetectorRef.detectChanges();
+    this.emitAddOneLike();
+  }
+
+  emitAddOneLike() {
+    this.addOneLike.emit();
   }
 
 }

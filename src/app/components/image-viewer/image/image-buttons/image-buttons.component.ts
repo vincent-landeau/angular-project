@@ -8,8 +8,9 @@ import {ImageModel} from "../../../../models/image.model";
 })
 export class ImageButtonsComponent implements OnInit {
 
-  @Input() imageComments: any;
+  @Input() imageAttr: any;
   @Output() addCommentEventToImageComponent = new EventEmitter<string>();
+  @Output() addOneLike = new EventEmitter<void>();
   showCommentSection = false;
 
   constructor() { }
@@ -19,8 +20,6 @@ export class ImageButtonsComponent implements OnInit {
 
   toggleCommentSection() {
     this.showCommentSection = !this.showCommentSection;
-    console.log(this.showCommentSection);
-    console.log(this.imageComments);
   }
 
   emitAddCommentEventToImageComponent() {
@@ -32,6 +31,10 @@ export class ImageButtonsComponent implements OnInit {
         (commentInput as HTMLInputElement).value = '';
       }
     }
+  }
+
+  emitAddOneLike() {
+      this.addOneLike.emit();
   }
 
 }

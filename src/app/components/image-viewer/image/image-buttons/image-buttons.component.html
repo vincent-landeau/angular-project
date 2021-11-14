@@ -1,12 +1,12 @@
-<div>
-  <button><3</button>
-  <button (click)="toggleCommentSection()">Commenter</button>
-  <div *ngIf="showCommentSection">
-    <input type="text" id="comment-input" (keyup.enter)="emitAddCommentEventToImageComponent()">
-    <div *ngIf="imageComments">
-      <div *ngFor="let item of imageComments">
-        <p>{{item.comment}}</p>
-      </div>
-    </div>
-  </div>
-</div>
+<mat-card-actions>
+  <a (click)="emitAddOneLike()"><mat-icon aria-hidden="false" aria-label="Like the post">favorite_border</mat-icon></a>
+  <a *ngIf="!showCommentSection" (click)="toggleCommentSection()"><mat-icon aria-hidden="false" aria-label="Comment the post">chat_bubble_outline</mat-icon></a>
+  <a *ngIf="showCommentSection" (click)="toggleCommentSection()"><mat-icon aria-hidden="false" aria-label="Comment the post">chat_bubble</mat-icon></a>
+  <p><b>{{imageAttr.likes}}</b> Likes</p>
+</mat-card-actions>
+<mat-card-content *ngIf="showCommentSection && imageAttr.comments.length > 0">
+    <p *ngFor="let item of imageAttr.comments.reverse()">{{item.author | lowercase | noSpaces | noQuotes}} : {{item.comment}}</p>
+</mat-card-content>
+<mat-card-actions *ngIf="showCommentSection">
+  <input type="text" id="comment-input" (keyup.enter)="emitAddCommentEventToImageComponent()" placeholder="Enter your message...">
+</mat-card-actions>

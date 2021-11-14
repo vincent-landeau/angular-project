@@ -6,11 +6,11 @@ import {ContactPageComponent} from "./contact-page/contact-page.component";
 const routes: Routes = [
     {
         path: '', // Chemin par défaut http://localhost:4200 ou serveur renvoie sur /home-page
-        redirectTo: 'home-page',
+        redirectTo: 'home',
         pathMatch: 'full'
     },
      {
-        path: 'home-page', // correspond à http://localhost:4200/home-page
+        path: 'home', // correspond à http://localhost:4200/home-page
         component: HomePageComponent
     },
      {

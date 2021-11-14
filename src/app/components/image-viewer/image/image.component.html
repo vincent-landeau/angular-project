@@ -1,4 +1,4 @@
 <div>
-  <img src="{{imageAttr.url}}" alt="{{imageAttr.alt}}">
-  <image-buttons [imageComments]="imageAttr.comments" (addCommentEventToImageComponent)="onEmitAddCommentEventToImageComponent($event)"></image-buttons>
+  <img mat-card-image src="{{imageAttr.url}}" alt="{{imageAttr.alt}}">
+  <image-buttons [imageAttr]="imageAttr" (addCommentEventToImageComponent)="onEmitAddCommentEventToImageComponent($event)" (addOneLike)="onEmitAddOneLike($event)"></image-buttons>
 </div>

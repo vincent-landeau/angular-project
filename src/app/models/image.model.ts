@@ -12,6 +12,6 @@ export class ImageModel implements Model{
     this.url = input.url || '';
     this.alt = input.alt || '';
     this.likes = input.likes || faker.datatype.number(10);
-    this.comments = input.comments || undefined;
+    this.comments = input.comments || [];
   }
 }

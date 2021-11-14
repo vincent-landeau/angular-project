@@ -6,6 +6,8 @@ import { PagesRoutingModule } from './pages-routing.module'
 import { SharedModule } from '../components/shared.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
   imports: [
     CommonModule,
     SharedModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    MatSidenavModule,
+    MatButtonModule
   ]
 })
 export class PagesModule { }
